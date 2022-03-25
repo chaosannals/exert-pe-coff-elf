@@ -22,7 +22,16 @@ var initp = Path.Combine(here, "init.bin");
 if (File.Exists(initp))
 {
     var c = File.ReadAllBytes(initp);
-    c?.Dump(0x7c00, 16);
+    c?.Dump(0x8200, 16);
+}
+
+Console.WriteLine("load --------------------------");
+
+var loadp = Path.Combine(here, "load.bin");
+if (File.Exists(loadp))
+{
+    var c = File.ReadAllBytes(loadp);
+    c?.Dump(0x8400, 16);
 }
 
 
